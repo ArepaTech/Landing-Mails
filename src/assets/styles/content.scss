@@ -96,6 +96,11 @@
         }
       }
     }
+    &--backoffice {
+      iframe {
+        height: 4565px;
+      }
+    }
   }
   /*** Efecto Transition **/
   .show-ul {

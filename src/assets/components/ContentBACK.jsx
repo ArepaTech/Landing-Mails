@@ -32,8 +32,8 @@ export default class ContentBACK extends Component {
 
   render() {
     return (
-      <div className='content-app'>
-        <ul className='content-app__ul'>
+      <div className='content-tms content-tms--backoffice'>
+        <ul className='content-tms__ul'>
           {this.state.data.map((list) => (
             <li key={list.name}>
               <Link
