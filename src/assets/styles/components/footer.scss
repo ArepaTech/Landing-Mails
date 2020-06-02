@@ -1,7 +1,11 @@
 footer {
   background-color: transparent !important;
   position: fixed;
-  bottom: -60px;
+  bottom: -70px;
+  @include mobile {
+    position: relative;
+    bottom: 0;
+  }
   h3 {
     font-family: 'Eina03-Bold';
     font-style: normal;
