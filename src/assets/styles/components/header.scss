@@ -1,0 +1,63 @@
+.navbar {
+  margin: 35px 0 65px 0;
+  &-brand {
+    img {
+      min-height: 50px;
+    }
+    .navbar-item {
+      @include mobile {
+        padding: 0;
+      }
+    }
+  }
+  a {
+    font-family: 'Eina02-SemiBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    color: #686d79;
+    position: relative;
+  }
+  &-item {
+    &-active {
+      color: #0900bf !important;
+      &::after {
+        content: '';
+        width: 90%;
+        height: 2px;
+        border-radius: 4px;
+        background-color: #0900bf;
+        position: absolute;
+        bottom: 0;
+        left: 6px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 300px) {
+  .navbar,
+  .navbar-menu,
+  .navbar-start,
+  .navbar-end {
+    align-items: stretch;
+    display: flex;
+  }
+  .navbar-menu {
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+  .navbar-end {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+  .navbar-item,
+  .navbar-link {
+    align-items: center;
+    display: flex;
+  }
+}

@@ -1,0 +1,175 @@
+.content {
+  .columns {
+    .column {
+      position: relative;
+      transition: transform 0.4s;
+    }
+  }
+  h1 {
+    font-family: 'Eina03-Bold';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 61px;
+    color: #0900bf;
+  }
+
+  p {
+    font-family: 'Eina03-Regular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #5b5b5b;
+    margin-bottom: 55px !important;
+  }
+  .card-button {
+    background-color: #0900bf;
+    border-radius: 10px;
+    min-height: 399px;
+    padding: 25px;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    position: relative;
+    cursor: pointer;
+    @include mobile {
+      z-index: 9;
+    }
+    &--tms {
+      background-image: url(../../assets/static/images/TMS.png);
+    }
+    &--app {
+      background-image: url(../../assets/static/images/App.png);
+      background-color: #ff7d49;
+    }
+    &--back {
+      background-image: url(../../assets/static/images/BackOffice.png);
+    }
+    &__content {
+      position: absolute;
+      width: 100%;
+    }
+  }
+  h2 {
+    font-family: 'Eina03-Bold';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 48px;
+    color: #ffffff;
+  }
+  &-tms {
+    position: absolute;
+    width: calc(100% - 0.75rem);
+    min-width: 960px;
+    top: 0;
+    z-index: 2;
+    @include mobile {
+      position: relative;
+      width: 100%;
+      min-width: 100%;
+    }
+    &__ul {
+      background-color: #090075;
+      margin: 0.75rem auto 0 !important;
+      position: absolute;
+      top: 0;
+      left: 285px;
+      min-height: 399px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      transition: width 0.3s linear;
+      overflow: hidden;
+      @include mobile {
+        width: 100% !important;
+        left: 0;
+        border-radius: 10px;
+        position: relative;
+      }
+      li {
+        color: #ffffff;
+      }
+    }
+  }
+  /*** Efecto Transition **/
+  .show-ul {
+    .card-button {
+      box-shadow: 14px 0px 25px rgba(37, 37, 37, 0.17);
+      z-index: 9;
+    }
+    ul {
+      width: 653px;
+      padding: 40px 0 0 60px;
+      z-index: 9;
+      margin: 0.75rem auto 0 !important;
+      @include mobile {
+        padding: 30px 30px 30px 40px;
+      }
+    }
+    iframe {
+      display: block;
+    }
+  }
+  .hide-ul {
+    ul {
+      width: 0;
+      padding: 40px 0;
+      will-change: transition;
+      @include mobile {
+        margin-top: -399px !important;
+      }
+    }
+    iframe {
+      display: none;
+    }
+  }
+  &-app {
+    position: absolute;
+    width: calc(100% - 0.75rem);
+    min-width: 960px;
+    top: 0;
+    z-index: 3;
+    @include mobile {
+      position: relative;
+      width: 100%;
+      min-width: 100%;
+    }
+    &__ul {
+      background-color: #e0dfdf;
+      margin: 0.75rem auto 0 !important;
+      position: absolute;
+      top: 0;
+      left: 285px;
+      min-height: 399px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      transition: width 0.3s linear;
+      overflow: hidden;
+      @include mobile {
+        width: 100% !important;
+        left: 0;
+        border-radius: 10px;
+        position: relative;
+      }
+      li {
+        color: #0900bf;
+        cursor: pointer;
+      }
+    }
+  }
+  /*** transition **/
+  .translate {
+    transform: translateX(-320px);
+    z-index: 4;
+    @include mobile {
+      transform: none;
+    }
+    &Back {
+      transform: translateX(-640px);
+      z-index: 4;
+      @include mobile {
+        transform: none;
+      }
+    }
+  }
+}
