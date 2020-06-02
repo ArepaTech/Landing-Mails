@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-
+import {Link, Element} from 'react-scroll'
+import scroll from '../static/images/btn-scroll-to-top.svg'
 export default class ContentTMS extends Component {
   constructor(props) {
     super(props)
@@ -10,7 +11,7 @@ export default class ContentTMS extends Component {
         },
       ],
       src: '',
-      active: false,
+      active: 'false',
     }
   }
   componentDidMount() {
@@ -33,23 +34,48 @@ export default class ContentTMS extends Component {
       <div className='content-tms'>
         <ul className='content-tms__ul'>
           {this.state.data.map((list) => (
-            <li
-              key={list.name}
-              onClick={() => {
-                this.setState({src: list.name, active: true})
-              }}
-              className={this.state.active ? 'is-active' : ''}
-            >
-              {list.name}
+            <li key={list.name}>
+              <Link
+                to='mail'
+                offset={-160}
+                spy={true}
+                smooth={true}
+                duration={1000}
+                className={
+                  this.state.active === this.state.src ? 'is-active' : ''
+                }
+                onClick={() => {
+                  this.setState({src: list.name, active: list.name})
+                }}
+              >
+                {list.name}
+              </Link>
             </li>
           ))}
         </ul>
-        {this.state.src && (
-          <iframe
-            src={`https://arepatech.github.io/liftit-mails/changeLogTMS/${this.state.src}`}
-            title='iframe'
-          ></iframe>
-        )}
+
+        <Element name='mail'>
+          {this.state.src && (
+            <iframe
+              src={`https://arepatech.github.io/liftit-mails/changeLogTMS/${this.state.src}`}
+              title='iframe'
+            ></iframe>
+          )}
+          {this.state.src && (
+            <Link
+              to='top'
+              offset={-160}
+              spy={true}
+              smooth={true}
+              duration={1000}
+              className='scroll-to-top'
+            >
+              <figure>
+                <img src={scroll} alt='' />
+              </figure>
+            </Link>
+          )}
+        </Element>
       </div>
     )
   }
