@@ -16,9 +16,9 @@ export default class Header extends Component {
               <a href='/' className='navbar-item navbar-item-active '>
                 Change Log
               </a>
-              <a href='#comunicados' className='navbar-item'>
+              {/* <a href='#comunicados' className='navbar-item'>
                 Comunicados
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
